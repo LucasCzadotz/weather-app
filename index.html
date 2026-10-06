@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>App Clima</title>
+</head>
+
+<body>
+    <header>
+        <h1>CLIMALUCAS</h1>
+        <img src="imgs/weather.png" alt="Logo clima nublado">
+    </header>
+    <main>
+        <form class="busca">
+            <input type="text" aria-label="Cidade" placeholder="Informe a cidade" required>
+            <button type="submit">Buscar!</button>
+        </form>
+        <section class="cardClima">
+            <div class="topo">
+                <h2 id="cidade">Uniao da vitoria</h2>
+                <time id="dataHora">06/10/2026</time>
+            </div>
+            <div class="principal">
+                <img id="iconeResultado" alt="">
+                <span id="temperatura">30º</span>
+                <p id="condicao">Parcialmente nublado</p>
+            </div>
+            <div class="detalhes">
+                <p>Sensação: <span id="sensacao">28º</span></p>
+                <p>Umidade: <span id="umidade">10%</span></p>
+                <p>Vento: <span id="vento">25Km/H</span></p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        Dev Lucas Diego Czadotz · @lucasczadotz
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
