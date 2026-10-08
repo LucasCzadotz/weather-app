@@ -16,28 +16,31 @@
     <main>
         <form class="busca">
             <input type="text" aria-label="Cidade" placeholder="Informe a cidade" required>
-            <button type="submit">Buscar!</button>
+            <button id="btnBuscar" type="submit">Buscar!</button>
         </form>
-        <section class="cardClima">
+        <p class="mensagem" role="status"></p>
+        <section class="cardClima" hidden>
             <div class="topo">
-                <h2 id="cidade">Uniao da vitoria</h2>
-                <time id="dataHora">06/10/2026</time>
+                <h2 id="cidade"></h2>
+                <time id="dataHora"></time>
             </div>
             <div class="principal">
                 <img id="iconeResultado" alt="">
-                <span id="temperatura">30º</span>
-                <p id="condicao">Parcialmente nublado</p>
+                <span id="temperatura"></span>
+                <p id="condicao"></p>
             </div>
             <div class="detalhes">
-                <p>Sensação: <span id="sensacao">28º</span></p>
-                <p>Umidade: <span id="umidade">10%</span></p>
-                <p>Vento: <span id="vento">25Km/H</span></p>
+                <p>Sensação: <span id="sensacao"></span></p>
+                <p>Umidade: <span id="umidade"></span></p>
+                <p>Vento: <span id="vento"></span></p>
             </div>
         </section>
     </main>
     <footer>
         Dev Lucas Diego Czadotz · @lucasczadotz
     </footer>
+
+    <script src="js/config.js"></script>
     <script src="js/script.js"></script>
 </body>
 
