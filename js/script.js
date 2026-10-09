@@ -18,7 +18,7 @@ form.addEventListener('submit', async function (event) {
         const res = await fetch(`https://api.weatherapi.com/v1/current.json?key=${CHAVE}&q=${encodeURIComponent(cidadeSemAcento)}&lang=pt`);
 
         if (!res.ok) {
-            throw new Error("Cidade não encontrada :( ");
+            throw new Error("Cidade não encontrada! :( ");
         }
 
         const dados = await res.json();
@@ -43,6 +43,7 @@ function mostrarClima(dados) {
     const [ano, mes, dia] = data.split("-");
 
     document.querySelector("#cidade").textContent = location.name;
+    document.querySelector("#local").textContent = `${location.region}, ${location.country}`;
 
     const tempo = document.querySelector("#dataHora");
     tempo.textContent = `${dia.padStart(2, "0")}/${mes}/${ano} ${hora}`;

@@ -57,15 +57,22 @@ header img {
     gap: 0.5rem;
     width: calc(100% - 2rem);
     max-width: 800px;
-    margin: 2rem auto 6rem;
+    margin: 2rem auto 1rem;
 }
 
 .busca input {
     flex: 1;
     min-width: 0;
     padding: 0.7rem;
-    border: 2px solid #bbd9f7;
+    border: 2px solid #86a6c7;
     border-radius: 0.5rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.busca input:focus {
+    outline: none;
+    border-color: #1e6fd9;
+    box-shadow: 0 0 0 3px rgba(30, 111, 217, 0.25);
 }
 
 .busca button {
@@ -75,6 +82,11 @@ header img {
     border: none;
     border-radius: 0.5rem;
     cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.busca button:hover {
+    background-color: #1559b0;
 }
 
 footer {
@@ -90,10 +102,10 @@ footer {
     margin: 0 auto;
     padding: 1.5rem;
     background-color: #ffffff;
-    border: 2px solid #bbd9f7;
+    border: 6px solid #88afd6;
     border-radius: 1rem;
     text-align: center;
-
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
     display: grid;
     gap: 1.75rem 1rem;
     justify-content: center;
@@ -124,6 +136,10 @@ footer {
 
 .topo h2 {
     font-size: 1.75rem;
+}
+
+.topo p {
+    font-size: 1.5rem;
 }
 
 .topo time {
@@ -197,4 +213,14 @@ footer {
         gap: 0.75rem;
         font-size: 1.25rem;
     }
+}
+
+.mensagem {
+    width: calc(100% - 2rem);
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    min-height: 1.5rem;
+    text-align: center;
+    font-size: medium;
+    font-weight: bold;
 }
