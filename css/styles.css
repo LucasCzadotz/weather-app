@@ -82,7 +82,11 @@ header img {
     border: none;
     border-radius: 0.5rem;
     cursor: pointer;
-    transition: background-color 0.2s;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.busca button:active {
+    transform: scale(0.95);
 }
 
 .busca button:hover {
@@ -111,6 +115,7 @@ footer {
     justify-content: center;
     align-items: center;
     justify-items: center;
+    animation: aparecer 0.4s ease;
 
     grid-template-areas:
         "topo     topo"
@@ -223,4 +228,23 @@ footer {
     text-align: center;
     font-size: medium;
     font-weight: bold;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.mensagem.erro {
+    color: #b42318;
+    background-color: #f3e1df;
+    border: 1px solid #e79893;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
 }

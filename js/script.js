@@ -12,6 +12,7 @@ form.addEventListener('submit', async function (event) {
     const cidadeSemAcento = cidade.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 
     mensagem.textContent = "Buscando...";
+    mensagem.classList.remove("erro");
     card.hidden = true;
 
     try {
@@ -27,6 +28,7 @@ form.addEventListener('submit', async function (event) {
         card.hidden = false;
 
     } catch (erro) {
+        mensagem.classList.add("erro");
         if (erro instanceof TypeError) {
             mensagem.textContent = "Sem conexão com a internet.";
         } else {
