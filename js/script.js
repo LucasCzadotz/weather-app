@@ -8,7 +8,7 @@ form.addEventListener('submit', async function (event) {
 
     const cidade = input.value.trim();
     if (!cidade) return;
-    
+
     const cidadeSemAcento = cidade.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 
     mensagem.textContent = "Buscando...";
@@ -18,8 +18,11 @@ form.addEventListener('submit', async function (event) {
     try {
         const res = await fetch(`https://api.weatherapi.com/v1/current.json?key=${CHAVE}&q=${encodeURIComponent(cidadeSemAcento)}&lang=pt`);
 
+        if (res.status === 400) {
+            throw new Error("Cidade não encontrada!")
+        }
         if (!res.ok) {
-            throw new Error("Cidade não encontrada! :( ");
+            throw new Error("Não foi possível buscar o clima agora.");
         }
 
         const dados = await res.json();
@@ -45,7 +48,9 @@ function mostrarClima(dados) {
     const [ano, mes, dia] = data.split("-");
 
     document.querySelector("#cidade").textContent = location.name;
-    document.querySelector("#local").textContent = `${location.region}, ${location.country}`;
+
+    const local = [location.region, location.country].filter(Boolean).join(", ");
+    document.querySelector("#local").textContent = local;
 
     const tempo = document.querySelector("#dataHora");
     tempo.textContent = `${dia.padStart(2, "0")}/${mes}/${ano} ${hora}`;

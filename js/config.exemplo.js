@@ -1,0 +1,1 @@
+const CHAVE ="cole sua propria API key aqui"; // e também renomear esse arquivo para "config.js"
